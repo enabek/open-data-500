@@ -1,0 +1,26 @@
+{
+  "name": "open-data-500",
+  "version": "1.0.0",
+  "description": "assignment",
+  "main": "index.js",
+  "dependencies": {
+    "govlab-styleguide": "^1.0.20",
+    "node-sass": "^3.10.0",
+    "sass-loader": "^4.0.2",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enabek/open-data-500.git"
+  },
+  "author": "enabek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enabek/open-data-500/issues"
+  },
+  "homepage": "https://github.com/enabek/open-data-500#readme"
+}

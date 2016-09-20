@@ -4,12 +4,11 @@
   "description": "assignment",
   "main": "index.js",
   "dependencies": {
-    "govlab-styleguide": "^1.0.20",
-    "node-sass": "^3.10.0",
-    "sass-loader": "^4.0.2",
-    "webpack": "^1.13.2"
+    "govlab-styleguide": "^1.0.20"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

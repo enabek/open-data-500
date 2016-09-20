@@ -2,13 +2,13 @@ $(document).ready(function () {
 
   $.getJSON('http://api.opendata500.com/api/v1/results/Canada', function(CanadianAPIListOfJSON) {
     
-    var dataParser = function(array){
-      var rawCity = [];
+    var dataParser = function(array, key){
+      // make array that holds all the raw data
+      var rawData = [];
       array.forEach(function(item){
-        rawCity.push(item.city);
-        // console.log(item.city);
+        rawData.push(item[key]);
       });
-      return rawCity;
+      return rawData;
     };
 
     var getFrequency = function(listRawData) {
@@ -25,41 +25,36 @@ $(document).ready(function () {
       return uniqueValueFrequency;
     };
 
-    var rawCity = dataParser(CanadianAPIListOfJSON);
+    // var fieldNames = Object.keys(CanadianAPIListOfJSON[0]);
 
-    var cityFrequency = getFrequency(rawCity);
+    var getRawCountAndFrequencyOfAllItems = function(listOfJSON, field) {
+      // returning an object that has two pieces of summarized data on it
+      var fieldSummary = {};
 
-    function sumValuesForCorrectness( obj ) {
-      var sum = 0;
-      for( var el in obj ) {
-        if( obj.hasOwnProperty( el ) ) {
-      sum += parseFloat( obj[el] );
-      }
+      // gather data
+      var listOfRawData = dataParser(listOfJSON, field);
+      var frequencyData = getFrequency(listOfRawData);
+      // add to fieldSummar
+      fieldSummary.rawData = listOfRawData;
+      fieldSummary.frequency = frequencyData;
+
+      return fieldSummary;
+    };
+
+    // a function all calls B for each field in A
+
+    var getAllDataSummary = function(listOfJSON) {
+      var fieldNames = Object.keys(listOfJSON[0]);
+      var overallData = {};
+
+      fieldNames.forEach(function(field) {
+        var fieldSummary = getRawCountAndFrequencyOfAllItems(listOfJSON, field);
+        overallData[field] = fieldSummary;
+      });
+      return overallData;
     }
-    return sum;
-    }
 
-    var totalCities = sumValuesForCorrectness(cityFrequency);   
-    console.log(totalCities); 
+    console.log(getAllDataSummary(CanadianAPIListOfJSON));
   });
-
 });
 
-
-
-
-
-
-
-// dataArray.forEach(function(item){
-//   if (item.how_important_is_open_data_to_your_company === "Very Important" || "Très importantes") {
-//     var veryImportant = [];
-//     veryImportant.push(item);
-//   } else if (item.how_important_is_open_data_to_your_company === "Important") {
-//     var important = [];
-//     important.push(item);
-//   } else {
-//     var notAsImportant = [];
-//     notAsImportant.push(item);
-//   };
-// });

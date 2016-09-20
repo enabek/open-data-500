@@ -4,7 +4,8 @@
   "description": "assignment",
   "main": "index.js",
   "dependencies": {
-    "govlab-styleguide": "^1.0.20"
+    "govlab-styleguide": "^1.0.20",
+    "slick-carousel": "^1.6.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1"

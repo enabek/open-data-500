@@ -2,20 +2,21 @@ $(document).ready(function () {
 
   $.getJSON('http://api.opendata500.com/api/v1/results/Canada', function(CanadianAPIListOfJSON) {
     
-    var dataParser = function(array, key){
-      // make array that holds all the raw data
+    var dataParser = function(listOfJSON, field){
+      // Make array that holds all the raw data
       var rawData = [];
-      array.forEach(function(item){
-        rawData.push(item[key]);
+      listOfJSON.forEach(function(element){
+        rawData.push(element[field]);
       });
+
       return rawData;
     };
 
-    var getFrequency = function(listRawData) {
-      // make a hash that has the frequency of each unique value in the list of raw data
+    var getFrequency = function(listOfRawData) {
+      // Make hash that has the frequency of each unique value in the list of raw data
       var uniqueValueFrequency = new Object;
 
-      listRawData.forEach(function(element) {
+      listOfRawData.forEach(function(element) {
         if (uniqueValueFrequency[element] === undefined) {
           uniqueValueFrequency[element] = 1;
         } else {
@@ -25,24 +26,21 @@ $(document).ready(function () {
       return uniqueValueFrequency;
     };
 
-    // var fieldNames = Object.keys(CanadianAPIListOfJSON[0]);
-
     var getRawCountAndFrequencyOfAllItems = function(listOfJSON, field) {
-      // returning an object that has two pieces of summarized data on it
+      // Return object that has two pieces of summarized data on it
       var fieldSummary = {};
 
-      // gather data
+      // Gather data
       var listOfRawData = dataParser(listOfJSON, field);
       var frequencyData = getFrequency(listOfRawData);
-      // add to fieldSummar
+      
       fieldSummary.rawData = listOfRawData;
       fieldSummary.frequency = frequencyData;
 
       return fieldSummary;
     };
 
-    // a function all calls B for each field in A
-
+    // Function to call summary functions for each field in list
     var getAllDataSummary = function(listOfJSON) {
       var fieldNames = Object.keys(listOfJSON[0]);
       var overallData = {};
@@ -51,6 +49,7 @@ $(document).ready(function () {
         var fieldSummary = getRawCountAndFrequencyOfAllItems(listOfJSON, field);
         overallData[field] = fieldSummary;
       });
+
       return overallData;
     }
 

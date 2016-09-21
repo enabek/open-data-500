@@ -1,7 +1,8 @@
-$(document).ready(function () {
+var industryData;
 
+var getCanadianData = function() {
   $.getJSON('http://api.opendata500.com/api/v1/results/Canada', function(CanadianAPIListOfJSON) {
-    
+      
     var dataParser = function(listOfJSON, field){
       // Make array that holds all the raw data
       var rawData = [];
@@ -53,7 +54,8 @@ $(document).ready(function () {
       return overallData;
     }
 
-    console.log(getAllDataSummary(CanadianAPIListOfJSON));
-  });
-});
+    var AllDataSummary = getAllDataSummary(CanadianAPIListOfJSON);
 
+    industryData = AllDataSummary['which_municipal_open_data_you_use_the_most'];
+  });
+};

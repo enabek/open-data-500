@@ -69,14 +69,23 @@
                 <div class="large-10 large-centered columns">
                     <h3>Visualize Open-Source Data Use of Canadian Companies</h3>
                     <p>Tilde cardigan accusamus photo booth, pork belly gentrify try-hard consequat mustache odio sunt selvage biodiesel. Distillery exercitation retro, eiusmod fugiat kitsch hella waistcoat gastropub salvia subway tile plaid fingerstache. Kale chips put a bird on it retro, cillum brunch banjo lumbersexual do pork belly ennui enamel pin roof party. Man bun man braid reprehenderit pug. Tousled dreamcatcher deep v venmo roof party.</p>
+                    <!-- <hr> -->
                     <div>
-                        <a href="#" class="b-button">Pie Chart</a><br>
-                        <a href="#" class="b-button">Pie Chart</a><br>
+                        <form action="" class="b-form">
+                            <div class="e-select">
+                                <select>
+                                    <option>Industry</option>
+                                    <option>Province</option>
+                                    <option>City</option>
+                                </select>
+                            </div>
+                        </form>
+
                         <a class="b-button js-open-modal" href="#">View Raw Data</a>
                         <!-- modal window -->
                         <div class="b-modal">
                             <div class="e-content">
-                                <h2>Title for modal</h2>
+                                <h2 class="">Title for modal</h2>
                                 <p><a class="b-button js-close-modal" href="#">OK</a></p>
                             </div>
                         </div>
@@ -132,6 +141,7 @@
     <!-- <script src="static/vendor/prism.js"></script> -->
         <script src="static/js/scripts.js"></script>
     <script src="static/js/canadaDataAPI.js"></script>
+    <script src="static/js/grabAndParseData.js"></script>
     <script src="static/js/c3.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 

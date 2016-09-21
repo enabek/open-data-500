@@ -13,8 +13,13 @@
 
   <link rel="stylesheet" href="static/vendor/slick.css">
   <!-- <link rel="stylesheet" href="static/vendor/prism.css" /> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  <script src="static/vendor/c3-0.4.11/c3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/vendor/c3-0.4.11/c3.css">
+
   <link rel="stylesheet" href="static/vendor/normalize.css">
   <link rel="stylesheet" href="static/styles/styles.css">
+
 
 </head>
 <body id="">
@@ -25,7 +30,7 @@
             </span>
         </div>
 
-
+        
 
 <!-- Implament search form
         <form class="b-search" action="">
@@ -62,8 +67,20 @@
         <div class="b-page-section">
             <div class="row">
                 <div class="large-10 large-centered columns">
+                    <h3>Visualize Open-Source Data Use of Canadian Companies</h3>
+                    <p>Tilde cardigan accusamus photo booth, pork belly gentrify try-hard consequat mustache odio sunt selvage biodiesel. Distillery exercitation retro, eiusmod fugiat kitsch hella waistcoat gastropub salvia subway tile plaid fingerstache. Kale chips put a bird on it retro, cillum brunch banjo lumbersexual do pork belly ennui enamel pin roof party. Man bun man braid reprehenderit pug. Tousled dreamcatcher deep v venmo roof party.</p>
                     <div>
-                        hello
+                        <a href="#" class="b-button">Pie Chart</a><br>
+                        <a href="#" class="b-button">Pie Chart</a><br>
+                        <a class="b-button js-open-modal" href="#">View Raw Data</a>
+                        <!-- modal window -->
+                        <div class="b-modal">
+                            <div class="e-content">
+                                <h2>Title for modal</h2>
+                                <p><a class="b-button js-close-modal" href="#">OK</a></p>
+                            </div>
+                        </div>
+                        <div id="chart"></div>
                     </div>
                 </div>
             </div>
@@ -113,8 +130,9 @@
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="static/vendor/slick.min.js"></script>
     <!-- <script src="static/vendor/prism.js"></script> -->
-    <script src="static/js/scripts.js"></script>
+        <script src="static/js/scripts.js"></script>
     <script src="static/js/canadaDataAPI.js"></script>
+    <script src="static/js/c3.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 
 <!--     <script>

@@ -2,4 +2,8 @@
 .b-form {
   padding: 0; }
 
+select {
+  height: 55px !important;
+  margin: auto; }
+
 /*# sourceMappingURL=styles.css.map */

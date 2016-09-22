@@ -2,7 +2,6 @@
 var makePieChart = function(field) {
   var fieldFrequencyData = summaryOfData[field].frequency;
   var piechartColumnsArray = generatePieChartArrays(fieldFrequencyData);
-  console.log('piechartColumnsArray is: ', piechartColumnsArray);
   var chart = renderPieChartC3(piechartColumnsArray);
 };
 
@@ -38,30 +37,26 @@ var renderPieChartC3 = function(chartData) {
   });
 
   return chart;
-}
-
+};
 
 // Bar Chart
 var makeBarChart = function(field) {
   var fieldFrequencyData = summaryOfData[field].frequency;
-  console.log(fieldFrequencyData);
+  // console.log(fieldFrequencyData);
   var barchartColumnsArray = generateBarChartArrays(fieldFrequencyData);
-
-  console.log('barchartColumnsArray is:', barchartColumnsArray);
+  // console.log('barchartColumnsArray is:', barchartColumnsArray);
   var chart = renderBarChartC3(barchartColumnsArray);
 };
 
 var generateBarChartArrays = function(field) {
   var chartColumns = [];
-  console.log(field);
-
+  // console.log(field);
   for (answer in field) {
     var answer = answer;
     var frequency = field[answer];
       chartColumns.push([answer, frequency]);
-  }
-  console.log(chartColumns);
-
+  };
+  // console.log(chartColumns);
   return chartColumns;
 };
 

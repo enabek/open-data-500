@@ -32,7 +32,10 @@ var renderPieChartC3 = function(chartData) {
   var chart = c3.generate({
     data: {
     columns: chartData,
-    type: 'pie'
+    type: 'pie',
+    },
+    size: {
+      height: 600
     }
   });
 
@@ -65,6 +68,9 @@ var renderBarChartC3 = function(chartData) {
     data: {
       columns: chartData,
       type: 'bar'
+    },
+    size: {
+      height: 600
     }
   });
   return chart;

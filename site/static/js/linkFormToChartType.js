@@ -12,7 +12,7 @@ $('#field-select').on('change', function () {
     } else if (choice === "City") {
       field = "city";
     } else if (choice === "Data Type"){
-      field = "what_types_of_open_data_does_your_company_use";
+      field = "which_municipal_open_data_you_use_the_most";
     } else {
       field = undefined;
     };

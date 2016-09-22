@@ -5,7 +5,7 @@ var grabData = function() {
     summaryOfData = getAllDataSummary(CanadianAPIListOfJSON);
     console.log(summaryOfData);
 
-    makePieChart('province');
+    // makePieChart('province');
     // makeBarChart('city');
   });
 };

@@ -1,9 +1,8 @@
 var field;
 var chartType;
 
-$(document).on('change', "#field-select", function(){
-  
-  var determineUserFieldChoice = function() {
+$('#field-select').on('change', function () {
+  window.determineUserFieldChoice = function() {
     var choice = $( "#field-select option:selected" ).text();
 
     if (choice === "Industry") {
@@ -22,8 +21,9 @@ $(document).on('change', "#field-select", function(){
   console.log(field); 
 });
 
-$(document).on('change', "#chart-select", function(){
-  var determineUserChartChoice = function() {
+
+$('#chart-select').on ('change', function() {
+  window.determineUserChartChoice = function() {
     var choice = $( "#chart-select option:selected" ).text();
 
     if (choice === "Pie Chart") {
@@ -34,9 +34,30 @@ $(document).on('change', "#chart-select", function(){
       chartType = undefined;
     };
   };
+
   determineUserChartChoice();
   console.log(chartType); 
+
 });
+
+// var determineToCallChart = function(field, chartType) {
+
+// };
+
+var callChart = function() {
+  if (field !== undefined && chartType !== undefined){
+    if (chartType === "pie"){
+      console.log("inside callChart", field)
+      makePieChart(field);
+    } else {
+      makeBarChart(field);
+    };
+  };
+};
+
+
+
+
 
   
   

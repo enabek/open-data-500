@@ -6,4 +6,8 @@ select {
   height: 55px !important;
   margin: auto; }
 
+.b-search {
+  padding-left: 80px;
+  margin-top: -60px; }
+
 /*# sourceMappingURL=styles.css.map */

@@ -3,8 +3,10 @@ var summaryOfData;
 var grabData = function() {
   $.getJSON('http://api.opendata500.com/api/v1/results/Canada', function(CanadianAPIListOfJSON) {
     summaryOfData = getAllDataSummary(CanadianAPIListOfJSON);
+    console.log(summaryOfData);
 
-    makePieChart('province');
+    // callChart();
+    // makePieChart('province');
     // makeBarChart('city');
   });
 };

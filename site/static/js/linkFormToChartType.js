@@ -1,5 +1,5 @@
-var field;
-var chartType;
+// var field;
+// var chartType;
 
 $('#field-select').on('change', function () {
   window.determineUserFieldChoice = function() {
@@ -17,8 +17,10 @@ $('#field-select').on('change', function () {
       field = undefined;
     };
   };
+
   determineUserFieldChoice();
-  console.log(field); 
+  console.log("inside determineUserFieldChoice: ", field); 
+  return field
 });
 
 
@@ -36,15 +38,17 @@ $('#chart-select').on ('change', function() {
   };
 
   determineUserChartChoice();
-  console.log(chartType); 
-
+  console.log("inside determineUserChartChoice: ", chartType); 
+  return chartType
 });
 
-// var determineToCallChart = function(field, chartType) {
-
-// };
 
 var callChart = function() {
+  console.log("inside callChart");
+
+  // var field = determineUserFieldChoice();
+  // var chartType = determineUserChartChoice();
+
   if (field !== undefined && chartType !== undefined){
     if (chartType === "pie"){
       console.log("inside callChart", field)

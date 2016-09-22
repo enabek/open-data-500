@@ -51,6 +51,10 @@ var callChart = function() {
 
   if (field !== undefined && chartType !== undefined){
     if (chartType === "pie"){
+      if (field === "what_industry_best_describes_your_company" || field === "what_types_of_open_data_does_your_company_use"){
+        $("#chart").addClass("expand");
+        $("<svg>").addClass("expand");
+      };
       console.log("inside callChart", field)
       makePieChart(field);
     } else {
@@ -58,7 +62,6 @@ var callChart = function() {
     };
   };
 };
-
 
 
 

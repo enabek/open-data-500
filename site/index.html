@@ -71,15 +71,32 @@
                     <p>Tilde cardigan accusamus photo booth, pork belly gentrify try-hard consequat mustache odio sunt selvage biodiesel. Distillery exercitation retro, eiusmod fugiat kitsch hella waistcoat gastropub salvia subway tile plaid fingerstache. Kale chips put a bird on it retro, cillum brunch banjo lumbersexual do pork belly ennui enamel pin roof party. Man bun man braid reprehenderit pug. Tousled dreamcatcher deep v venmo roof party.</p>
                     <!-- <hr> -->
                     <div>
-                        <form action="" class="b-form">
-                            <div class="e-select">
-                                <select>
-                                    <option>Industry</option>
-                                    <option>Province</option>
-                                    <option>City</option>
-                                </select>
+                        <div class="row">
+                            <div class="large-6 columns">
+                                <form action="" class="b-form first-form">
+                                    <div class="e-select">
+                                        <select>
+                                            <option>1. Select field:</option>
+                                            <option>Industry</option>
+                                            <option>Province</option>
+                                            <option>City</option>
+                                        </select>
+                                    </div>
+                                </form>
+                                </div>
+                            <div class="large-6 columns">
+                                <form action="" class="b-form second-form">
+                                    <div class="e-select">
+                                        <select>
+                                            <option>2. Select chart:</option>
+                                            <option>Pie Chart</option>
+                                            <option>Histogram</option>
+                                        </select>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
+
 
                         <a class="b-button js-open-modal" href="#">View Raw Data</a>
                         <!-- modal window -->
@@ -139,10 +156,10 @@
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="static/vendor/slick.min.js"></script>
     <!-- <script src="static/vendor/prism.js"></script> -->
-        <script src="static/js/scripts.js"></script>
-    <!-- <script src="static/js/canadaDataAPI.js"></script> -->
+    <script src="static/js/scripts.js"></script>
     <script src="static/js/grabAndParseData.js"></script>
-    <!-- <script src="static/js/c3.js"></script> -->
+    <script src="static/js/makeChart.js"></script>
+    <script src="static/js/initialize.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 
 <!--     <script>

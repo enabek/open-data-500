@@ -1,4 +1,13 @@
 $(document).ready(function(){ 
   grabData();
-  // callchart();
+});
+
+$(document).ready(function(){ 
+  $('#field-select').on('change', function() { 
+  render();
+  });
+
+  $('#chart-select').on('change', function() { 
+  render();
+  });
 });

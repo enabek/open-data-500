@@ -35,7 +35,7 @@ var renderPieChartC3 = function(chartData) {
     type: 'pie',
     },
     size: {
-      height: 600
+      height: 550
     }
   });
 
@@ -70,7 +70,7 @@ var renderBarChartC3 = function(chartData) {
       type: 'bar'
     },
     size: {
-      height: 600
+      height: 550
     }
   });
   return chart;

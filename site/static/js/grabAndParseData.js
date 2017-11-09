@@ -3,15 +3,12 @@ var summaryOfData;
 var grabData = function() {
   $.getJSON('http://api.opendata500.com/api/v1/results/Canada', function(CanadianAPIListOfJSON) {
     summaryOfData = getAllDataSummary(CanadianAPIListOfJSON);
-
-    makePieChart('province');
-    // makeBarChart('city');
   });
 };
 
-var dataParser = function(listOfJSON, field){
+var dataParser = function(listOfJSON, field) {
   var rawData = [];
-  listOfJSON.forEach(function(element){
+  listOfJSON.forEach(function(element) {
     rawData.push(element[field]);
   });
 
@@ -19,7 +16,7 @@ var dataParser = function(listOfJSON, field){
 };
 
 var getFrequency = function(listOfRawData) {
-  var uniqueValueFrequency = new Object;
+  var uniqueValueFrequency = {};
 
   listOfRawData.forEach(function(element) {
     if (uniqueValueFrequency[element] === undefined) {
@@ -54,5 +51,3 @@ var getAllDataSummary = function(listOfJSON) {
 
   return overallData;
 };
-
-

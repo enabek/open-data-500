@@ -31,8 +31,11 @@ var generatePieChartColumn = function(answer, frequency) {
 var renderPieChartC3 = function(chartData) {
   var chart = c3.generate({
     data: {
-    columns: chartData,
-    type: 'pie'
+      columns: chartData,
+      type: 'pie',
+    },
+    size: {
+      height: 550
     }
   });
 
@@ -42,21 +45,19 @@ var renderPieChartC3 = function(chartData) {
 // Bar Chart
 var makeBarChart = function(field) {
   var fieldFrequencyData = summaryOfData[field].frequency;
-  // console.log(fieldFrequencyData);
   var barchartColumnsArray = generateBarChartArrays(fieldFrequencyData);
-  // console.log('barchartColumnsArray is:', barchartColumnsArray);
   var chart = renderBarChartC3(barchartColumnsArray);
 };
 
 var generateBarChartArrays = function(field) {
   var chartColumns = [];
-  // console.log(field);
+  
   for (answer in field) {
     var answer = answer;
     var frequency = field[answer];
       chartColumns.push([answer, frequency]);
   };
-  // console.log(chartColumns);
+
   return chartColumns;
 };
 
@@ -65,7 +66,11 @@ var renderBarChartC3 = function(chartData) {
     data: {
       columns: chartData,
       type: 'bar'
+    },
+    size: {
+      height: 550
     }
   });
+
   return chart;
 };
